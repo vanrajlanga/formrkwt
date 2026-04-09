@@ -2,3 +2,4 @@ node_modules/
 server/crm.db
 .claude/
 dist/
+.env

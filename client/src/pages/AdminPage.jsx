@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
+import { authFetch, getToken } from '../auth';
 
 export default function AdminPage() {
   const [submissions, setSubmissions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [expandedId, setExpandedId] = useState(null);
+  const token = getToken();
 
   const fetchData = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/submissions');
+      const res = await authFetch('/api/submissions');
       const data = await res.json();
       setSubmissions(data);
     } catch (err) {
@@ -23,7 +25,7 @@ export default function AdminPage() {
 
   const handleDelete = async (id) => {
     if (!confirm('Are you sure you want to delete this entry?')) return;
-    await fetch(`/api/submissions/${id}`, { method: 'DELETE' });
+    await authFetch(`/api/submissions/${id}`, { method: 'DELETE' });
     fetchData();
   };
 
@@ -45,13 +47,13 @@ export default function AdminPage() {
         <h2 className="text-2xl font-bold text-gray-800">All Submissions</h2>
         <div className="flex gap-3">
           <a
-            href="/api/export/csv"
+            href={`/api/export/csv?token=${encodeURIComponent(token || '')}`}
             className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm font-medium"
           >
             Export CSV
           </a>
           <a
-            href="/api/export/xlsx"
+            href={`/api/export/xlsx?token=${encodeURIComponent(token || '')}`}
             className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-medium"
           >
             Export XLS

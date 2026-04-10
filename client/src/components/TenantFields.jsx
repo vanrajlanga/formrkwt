@@ -37,18 +37,6 @@ export default function TenantFields({ index, tenant, onChange }) {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Tenant {num} Aadhaar Number
-          </label>
-          <input
-            type="text"
-            value={tenant.aadhaar}
-            onChange={(e) => handleChange('aadhaar', e.target.value)}
-            placeholder="Enter tenant Aadhaar number"
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
             Tenant {num} Vehicle Number (4 wheel)
           </label>
           <input

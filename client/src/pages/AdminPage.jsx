@@ -169,7 +169,6 @@ export default function AdminPage() {
                       <h4 className="font-medium text-purple-900 mb-2">Owner {i + 1}</h4>
                       <p><span className="text-gray-500">Name:</span> {o.name}</p>
                       <p><span className="text-gray-500">Mobile:</span> {o.mobile}</p>
-                      <p><span className="text-gray-500">Aadhaar:</span> {o.aadhaar || '-'}</p>
                       <p><span className="text-gray-500">Vehicle:</span> {o.vehicle || '-'}</p>
                     </div>
                   ))}
@@ -178,7 +177,6 @@ export default function AdminPage() {
                       <h4 className="font-medium text-orange-800 mb-2">Tenant {i + 1}</h4>
                       <p><span className="text-gray-500">Name:</span> {t.name}</p>
                       <p><span className="text-gray-500">Mobile:</span> {t.mobile}</p>
-                      <p><span className="text-gray-500">Aadhaar:</span> {t.aadhaar || '-'}</p>
                       <p><span className="text-gray-500">Vehicle:</span> {t.vehicle || '-'}</p>
                     </div>
                   ))}

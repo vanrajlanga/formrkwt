@@ -2,8 +2,8 @@ import { useState } from 'react';
 import OwnerFields from '../components/OwnerFields';
 import TenantFields from '../components/TenantFields';
 
-const emptyOwner = { name: '', mobile: '', aadhaar: '', vehicle: '' };
-const emptyTenant = { name: '', mobile: '', aadhaar: '', vehicle: '' };
+const emptyOwner = { name: '', mobile: '', vehicle: '' };
+const emptyTenant = { name: '', mobile: '', vehicle: '' };
 
 function PlusButton({ onClick, label }) {
   return (

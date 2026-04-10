@@ -37,7 +37,6 @@ async function flattenSubmissions() {
       const num = i + 1;
       entry[`Owner ${num} Name`] = owner ? owner.name : '';
       entry[`Owner ${num} Mobile`] = owner ? owner.mobile : '';
-      entry[`Owner ${num} Aadhaar`] = owner ? owner.aadhaar : '';
       entry[`Owner ${num} Vehicle (4 wheel)`] = owner ? owner.vehicle : '';
     }
 
@@ -46,7 +45,6 @@ async function flattenSubmissions() {
       const num = i + 1;
       entry[`Tenant ${num} Name`] = tenant ? tenant.name : '';
       entry[`Tenant ${num} Mobile`] = tenant ? tenant.mobile : '';
-      entry[`Tenant ${num} Aadhaar`] = tenant ? tenant.aadhaar : '';
       entry[`Tenant ${num} Vehicle (4 wheel)`] = tenant ? tenant.vehicle : '';
     }
 
